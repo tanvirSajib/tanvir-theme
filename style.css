@@ -12,3 +12,7 @@ Text Domain: tanvir-theme
 */
 
 /* Your theme's actual CSS rules will go below this line */
+
+p{
+    color: #ff0000 !important;
+}

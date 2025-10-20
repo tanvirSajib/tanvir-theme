@@ -18,3 +18,6 @@ Three of the primary URL helper functions are:
 For directory paths
 - get_theme_file_path( $file )
 - get_parent_theme_file_path( $file )
+
+### Inline styles
+There are times when you might need to add some inline CSS to the &lt;head> area on the front end. WordPress has the wp_add_inline_style() function for this specific scenario.
