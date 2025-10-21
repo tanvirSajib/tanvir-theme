@@ -1,20 +1,20 @@
 <?php
 
-add_action( 'wp_enqueue_scripts', 'theme_slug_enqueue_style' );
+add_action( 'wp_enqueue_scripts', 'theme_slug_enqueue_scripts' );
 
-function theme_slug_enqueue_style() {
-	wp_enqueue_style(
-		'theme-slug-style',
-		get_stylesheet_uri(),
+
+function theme_slug_enqueue_scripts() {
+	wp_enqueue_script(
+		'theme-slug-navigation',
+		get_parent_theme_file_uri( 'assets/js/navigation.js' ),
+		array(),
+		wp_get_theme()->get( 'Version' ),
+		true
 	);
 
-	wp_enqueue_style(
-		'theme-slug-primary',
-		get_parent_theme_file_uri( 'assets/css/primary.css' ),
-	);
-
-	wp_add_inline_style(
-		'theme-slug-primary',
-		'body{background:#ff00ee}'
+	wp_add_inline_script(
+		'theme-slug-navigation',
+		'console.log( "Testing inline js" );',
+		false
 	);
 }
